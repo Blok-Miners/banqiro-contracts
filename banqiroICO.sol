@@ -1,229 +1,225 @@
-/**
- *Submitted for verification at BscScan.com on 2022-12-15
- */
-
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity 0.8 .9;
 library SafeMath {
-	/**
-	 * @dev Returns the addition of two unsigned integers, with an overflow flag.
-	 *
-	 * _Available since v3.4._
-	 */
-	function tryAdd(uint256 a, uint256 b) internal pure returns(bool, uint256) {
-		unchecked {
-			uint256 c = a + b;
-			if (c < a) return (false, 0);
-			return (true, c);
-		}
-	}
+    /**
+     * @dev Returns the addition of two unsigned integers, with an overflow flag.
+     *
+     * _Available since v3.4._
+     */
+    function tryAdd(uint256 a, uint256 b) internal pure returns (bool, uint256) {
+        unchecked {
+            uint256 c = a + b;
+            if (c < a) return (false, 0);
+            return (true, c);
+        }
+    }
 
-	/**
-	 * @dev Returns the subtraction of two unsigned integers, with an overflow flag.
-	 *
-	 * _Available since v3.4._
-	 */
-	function trySub(uint256 a, uint256 b) internal pure returns(bool, uint256) {
-		unchecked {
-			if (b > a) return (false, 0);
-			return (true, a - b);
-		}
-	}
+    /**
+     * @dev Returns the subtraction of two unsigned integers, with an overflow flag.
+     *
+     * _Available since v3.4._
+     */
+    function trySub(uint256 a, uint256 b) internal pure returns (bool, uint256) {
+        unchecked {
+            if (b > a) return (false, 0);
+            return (true, a - b);
+        }
+    }
 
-	/**
-	 * @dev Returns the multiplication of two unsigned integers, with an overflow flag.
-	 *
-	 * _Available since v3.4._
-	 */
-	function tryMul(uint256 a, uint256 b) internal pure returns(bool, uint256) {
-		unchecked {
-			// Gas optimization: this is cheaper than requiring 'a' not being zero, but the
-			// benefit is lost if 'b' is also tested.
-			// See: https://github.com/OpenZeppelin/openzeppelin-contracts/pull/522
-			if (a == 0) return (true, 0);
-			uint256 c = a * b;
-			if (c / a != b) return (false, 0);
-			return (true, c);
-		}
-	}
+    /**
+     * @dev Returns the multiplication of two unsigned integers, with an overflow flag.
+     *
+     * _Available since v3.4._
+     */
+    function tryMul(uint256 a, uint256 b) internal pure returns (bool, uint256) {
+        unchecked {
+            // Gas optimization: this is cheaper than requiring 'a' not being zero, but the
+            // benefit is lost if 'b' is also tested.
+            // See: https://github.com/OpenZeppelin/openzeppelin-contracts/pull/522
+            if (a == 0) return (true, 0);
+            uint256 c = a * b;
+            if (c / a != b) return (false, 0);
+            return (true, c);
+        }
+    }
 
-	/**
-	 * @dev Returns the division of two unsigned integers, with a division by zero flag.
-	 *
-	 * _Available since v3.4._
-	 */
-	function tryDiv(uint256 a, uint256 b) internal pure returns(bool, uint256) {
-		unchecked {
-			if (b == 0) return (false, 0);
-			return (true, a / b);
-		}
-	}
+    /**
+     * @dev Returns the division of two unsigned integers, with a division by zero flag.
+     *
+     * _Available since v3.4._
+     */
+    function tryDiv(uint256 a, uint256 b) internal pure returns (bool, uint256) {
+        unchecked {
+            if (b == 0) return (false, 0);
+            return (true, a / b);
+        }
+    }
 
-	/**
-	 * @dev Returns the remainder of dividing two unsigned integers, with a division by zero flag.
-	 *
-	 * _Available since v3.4._
-	 */
-	function tryMod(uint256 a, uint256 b) internal pure returns(bool, uint256) {
-		unchecked {
-			if (b == 0) return (false, 0);
-			return (true, a % b);
-		}
-	}
+    /**
+     * @dev Returns the remainder of dividing two unsigned integers, with a division by zero flag.
+     *
+     * _Available since v3.4._
+     */
+    function tryMod(uint256 a, uint256 b) internal pure returns (bool, uint256) {
+        unchecked {
+            if (b == 0) return (false, 0);
+            return (true, a % b);
+        }
+    }
 
-	/**
-	 * @dev Returns the addition of two unsigned integers, reverting on
-	 * overflow.
-	 *
-	 * Counterpart to Solidity's `+` operator.
-	 *
-	 * Requirements:
-	 *
-	 * - Addition cannot overflow.
-	 */
-	function add(uint256 a, uint256 b) internal pure returns(uint256) {
-		return a + b;
-	}
+    /**
+     * @dev Returns the addition of two unsigned integers, reverting on
+     * overflow.
+     *
+     * Counterpart to Solidity's `+` operator.
+     *
+     * Requirements:
+     *
+     * - Addition cannot overflow.
+     */
+    function add(uint256 a, uint256 b) internal pure returns (uint256) {
+        return a + b;
+    }
 
-	/**
-	 * @dev Returns the subtraction of two unsigned integers, reverting on
-	 * overflow (when the result is negative).
-	 *
-	 * Counterpart to Solidity's `-` operator.
-	 *
-	 * Requirements:
-	 *
-	 * - Subtraction cannot overflow.
-	 */
-	function sub(uint256 a, uint256 b) internal pure returns(uint256) {
-		return a - b;
-	}
+    /**
+     * @dev Returns the subtraction of two unsigned integers, reverting on
+     * overflow (when the result is negative).
+     *
+     * Counterpart to Solidity's `-` operator.
+     *
+     * Requirements:
+     *
+     * - Subtraction cannot overflow.
+     */
+    function sub(uint256 a, uint256 b) internal pure returns (uint256) {
+        return a - b;
+    }
 
-	/**
-	 * @dev Returns the multiplication of two unsigned integers, reverting on
-	 * overflow.
-	 *
-	 * Counterpart to Solidity's `*` operator.
-	 *
-	 * Requirements:
-	 *
-	 * - Multiplication cannot overflow.
-	 */
-	function mul(uint256 a, uint256 b) internal pure returns(uint256) {
-		return a * b;
-	}
+    /**
+     * @dev Returns the multiplication of two unsigned integers, reverting on
+     * overflow.
+     *
+     * Counterpart to Solidity's `*` operator.
+     *
+     * Requirements:
+     *
+     * - Multiplication cannot overflow.
+     */
+    function mul(uint256 a, uint256 b) internal pure returns (uint256) {
+        return a * b;
+    }
 
-	/**
-	 * @dev Returns the integer division of two unsigned integers, reverting on
-	 * division by zero. The result is rounded towards zero.
-	 *
-	 * Counterpart to Solidity's `/` operator.
-	 *
-	 * Requirements:
-	 *
-	 * - The divisor cannot be zero.
-	 */
-	function div(uint256 a, uint256 b) internal pure returns(uint256) {
-		return a / b;
-	}
+    /**
+     * @dev Returns the integer division of two unsigned integers, reverting on
+     * division by zero. The result is rounded towards zero.
+     *
+     * Counterpart to Solidity's `/` operator.
+     *
+     * Requirements:
+     *
+     * - The divisor cannot be zero.
+     */
+    function div(uint256 a, uint256 b) internal pure returns (uint256) {
+        return a / b;
+    }
 
-	/**
-	 * @dev Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),
-	 * reverting when dividing by zero.
-	 *
-	 * Counterpart to Solidity's `%` operator. This function uses a `revert`
-	 * opcode (which leaves remaining gas untouched) while Solidity uses an
-	 * invalid opcode to revert (consuming all remaining gas).
-	 *
-	 * Requirements:
-	 *
-	 * - The divisor cannot be zero.
-	 */
-	function mod(uint256 a, uint256 b) internal pure returns(uint256) {
-		return a % b;
-	}
+    /**
+     * @dev Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),
+     * reverting when dividing by zero.
+     *
+     * Counterpart to Solidity's `%` operator. This function uses a `revert`
+     * opcode (which leaves remaining gas untouched) while Solidity uses an
+     * invalid opcode to revert (consuming all remaining gas).
+     *
+     * Requirements:
+     *
+     * - The divisor cannot be zero.
+     */
+    function mod(uint256 a, uint256 b) internal pure returns (uint256) {
+        return a % b;
+    }
 
-	/**
-	 * @dev Returns the subtraction of two unsigned integers, reverting with custom message on
-	 * overflow (when the result is negative).
-	 *
-	 * CAUTION: This function is deprecated because it requires allocating memory for the error
-	 * message unnecessarily. For custom revert reasons use {trySub}.
-	 *
-	 * Counterpart to Solidity's `-` operator.
-	 *
-	 * Requirements:
-	 *
-	 * - Subtraction cannot overflow.
-	 */
-	function sub(
-		uint256 a,
-		uint256 b,
-		string memory errorMessage
-	) internal pure returns(uint256) {
-		unchecked {
-			require(b <= a, errorMessage);
-			return a - b;
-		}
-	}
+    /**
+     * @dev Returns the subtraction of two unsigned integers, reverting with custom message on
+     * overflow (when the result is negative).
+     *
+     * CAUTION: This function is deprecated because it requires allocating memory for the error
+     * message unnecessarily. For custom revert reasons use {trySub}.
+     *
+     * Counterpart to Solidity's `-` operator.
+     *
+     * Requirements:
+     *
+     * - Subtraction cannot overflow.
+     */
+    function sub(
+        uint256 a,
+        uint256 b,
+        string memory errorMessage
+    ) internal pure returns (uint256) {
+        unchecked {
+            require(b <= a, errorMessage);
+            return a - b;
+        }
+    }
 
-	/**
-	 * @dev Returns the integer division of two unsigned integers, reverting with custom message on
-	 * division by zero. The result is rounded towards zero.
-	 *
-	 * Counterpart to Solidity's `/` operator. Note: this function uses a
-	 * `revert` opcode (which leaves remaining gas untouched) while Solidity
-	 * uses an invalid opcode to revert (consuming all remaining gas).
-	 *
-	 * Requirements:
-	 *
-	 * - The divisor cannot be zero.
-	 */
-	function div(
-		uint256 a,
-		uint256 b,
-		string memory errorMessage
-	) internal pure returns(uint256) {
-		unchecked {
-			require(b > 0, errorMessage);
-			return a / b;
-		}
-	}
+    /**
+     * @dev Returns the integer division of two unsigned integers, reverting with custom message on
+     * division by zero. The result is rounded towards zero.
+     *
+     * Counterpart to Solidity's `/` operator. Note: this function uses a
+     * `revert` opcode (which leaves remaining gas untouched) while Solidity
+     * uses an invalid opcode to revert (consuming all remaining gas).
+     *
+     * Requirements:
+     *
+     * - The divisor cannot be zero.
+     */
+    function div(
+        uint256 a,
+        uint256 b,
+        string memory errorMessage
+    ) internal pure returns (uint256) {
+        unchecked {
+            require(b > 0, errorMessage);
+            return a / b;
+        }
+    }
 
-	/**
-	 * @dev Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),
-	 * reverting with custom message when dividing by zero.
-	 *
-	 * CAUTION: This function is deprecated because it requires allocating memory for the error
-	 * message unnecessarily. For custom revert reasons use {tryMod}.
-	 *
-	 * Counterpart to Solidity's `%` operator. This function uses a `revert`
-	 * opcode (which leaves remaining gas untouched) while Solidity uses an
-	 * invalid opcode to revert (consuming all remaining gas).
-	 *
-	 * Requirements:
-	 *
-	 * - The divisor cannot be zero.
-	 */
-	function mod(
-		uint256 a,
-		uint256 b,
-		string memory errorMessage
-	) internal pure returns(uint256) {
-		unchecked {
-			require(b > 0, errorMessage);
-			return a % b;
-		}
-	}
+    /**
+     * @dev Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),
+     * reverting with custom message when dividing by zero.
+     *
+     * CAUTION: This function is deprecated because it requires allocating memory for the error
+     * message unnecessarily. For custom revert reasons use {tryMod}.
+     *
+     * Counterpart to Solidity's `%` operator. This function uses a `revert`
+     * opcode (which leaves remaining gas untouched) while Solidity uses an
+     * invalid opcode to revert (consuming all remaining gas).
+     *
+     * Requirements:
+     *
+     * - The divisor cannot be zero.
+     */
+    function mod(
+        uint256 a,
+        uint256 b,
+        string memory errorMessage
+    ) internal pure returns (uint256) {
+        unchecked {
+            require(b > 0, errorMessage);
+            return a % b;
+        }
+    }
 }
 abstract contract Context {
-	function _msgSender() internal view virtual returns(address) {
-		return msg.sender;
-	}
+    function _msgSender() internal view virtual returns (address) {
+        return msg.sender;
+    }
 
-	function _msgData() internal view virtual returns(bytes calldata) {
-		return msg.data;
-	}
+    function _msgData() internal view virtual returns (bytes calldata) {
+        return msg.data;
+    }
 }
 
 /**
@@ -239,143 +235,143 @@ abstract contract Context {
  * the owner.
  */
 abstract contract Ownable is Context {
-	address private _owner;
+    address private _owner;
 
-	event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
+    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
 
-	/**
-	 * @dev Initializes the contract setting the deployer as the initial owner.
-	 */
-	constructor() {
-		_transferOwnership(_msgSender());
-	}
+    /**
+     * @dev Initializes the contract setting the deployer as the initial owner.
+     */
+    constructor() {
+        _transferOwnership(_msgSender());
+    }
 
-	/**
-	 * @dev Throws if called by any account other than the owner.
-	 */
-	modifier onlyOwner() {
-		_checkOwner();
-		_;
-	}
+    /**
+     * @dev Throws if called by any account other than the owner.
+     */
+    modifier onlyOwner() {
+        _checkOwner();
+        _;
+    }
 
-	/**
-	 * @dev Returns the address of the current owner.
-	 */
-	function owner() public view virtual returns(address) {
-		return _owner;
-	}
+    /**
+     * @dev Returns the address of the current owner.
+     */
+    function owner() public view virtual returns (address) {
+        return _owner;
+    }
 
-	/**
-	 * @dev Throws if the sender is not the owner.
-	 */
-	function _checkOwner() internal view virtual {
-		require(owner() == _msgSender(), "Ownable: caller is not the owner");
-	}
+    /**
+     * @dev Throws if the sender is not the owner.
+     */
+    function _checkOwner() internal view virtual {
+        require(owner() == _msgSender(), "Ownable: caller is not the owner");
+    }
 
-	/**
-	 * @dev Leaves the contract without owner. It will not be possible to call
-	 * `onlyOwner` functions anymore. Can only be called by the current owner.
-	 *
-	 * NOTE: Renouncing ownership will leave the contract without an owner,
-	 * thereby removing any functionality that is only available to the owner.
-	 */
-	function renounceOwnership() public virtual onlyOwner {
-		_transferOwnership(address(0));
-	}
+    /**
+     * @dev Leaves the contract without owner. It will not be possible to call
+     * `onlyOwner` functions anymore. Can only be called by the current owner.
+     *
+     * NOTE: Renouncing ownership will leave the contract without an owner,
+     * thereby removing any functionality that is only available to the owner.
+     */
+    function renounceOwnership() public virtual onlyOwner {
+        _transferOwnership(address(0));
+    }
 
-	/**
-	 * @dev Transfers ownership of the contract to a new account (`newOwner`).
-	 * Can only be called by the current owner.
-	 */
-	function transferOwnership(address newOwner) public virtual onlyOwner {
-		require(newOwner != address(0), "Ownable: new owner is the zero address");
-		_transferOwnership(newOwner);
-	}
+    /**
+     * @dev Transfers ownership of the contract to a new account (`newOwner`).
+     * Can only be called by the current owner.
+     */
+    function transferOwnership(address newOwner) public virtual onlyOwner {
+        require(newOwner != address(0), "Ownable: new owner is the zero address");
+        _transferOwnership(newOwner);
+    }
 
-	/**
-	 * @dev Transfers ownership of the contract to a new account (`newOwner`).
-	 * Internal function without access restriction.
-	 */
-	function _transferOwnership(address newOwner) internal virtual {
-		address oldOwner = _owner;
-		_owner = newOwner;
-		emit OwnershipTransferred(oldOwner, newOwner);
-	}
+    /**
+     * @dev Transfers ownership of the contract to a new account (`newOwner`).
+     * Internal function without access restriction.
+     */
+    function _transferOwnership(address newOwner) internal virtual {
+        address oldOwner = _owner;
+        _owner = newOwner;
+        emit OwnershipTransferred(oldOwner, newOwner);
+    }
 }
 
 interface IERC20 {
-	/**
-	 * @dev Emitted when `value` tokens are moved from one account (`from`) to
-	 * another (`to`).
-	 *
-	 * Note that `value` may be zero.
-	 */
-	event Transfer(address indexed from, address indexed to, uint256 value);
+    /**
+     * @dev Emitted when `value` tokens are moved from one account (`from`) to
+     * another (`to`).
+     *
+     * Note that `value` may be zero.
+     */
+    event Transfer(address indexed from, address indexed to, uint256 value);
 
-	/**
-	 * @dev Emitted when the allowance of a `spender` for an `owner` is set by
-	 * a call to {approve}. `value` is the new allowance.
-	 */
-	event Approval(address indexed owner, address indexed spender, uint256 value);
+    /**
+     * @dev Emitted when the allowance of a `spender` for an `owner` is set by
+     * a call to {approve}. `value` is the new allowance.
+     */
+    event Approval(address indexed owner, address indexed spender, uint256 value);
 
-	/**
-	 * @dev Returns the amount of tokens in existence.
-	 */
-	function totalSupply() external view returns(uint256);
+    /**
+     * @dev Returns the amount of tokens in existence.
+     */
+    function totalSupply() external view returns (uint256);
 
-	/**
-	 * @dev Returns the amount of tokens owned by `account`.
-	 */
-	function balanceOf(address account) external view returns(uint256);
+    /**
+     * @dev Returns the amount of tokens owned by `account`.
+     */
+    function balanceOf(address account) external view returns (uint256);
 
-	/**
-	 * @dev Moves `amount` tokens from the caller's account to `to`.
-	 *
-	 * Returns a boolean value indicating whether the operation succeeded.
-	 *
-	 * Emits a {Transfer} event.
-	 */
-	function transfer(address to, uint256 amount) external returns(bool);
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `to`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a {Transfer} event.
+     */
+    function transfer(address to, uint256 amount) external returns (bool);
 
-	/**
-	 * @dev Returns the remaining number of tokens that `spender` will be
-	 * allowed to spend on behalf of `owner` through {transferFrom}. This is
-	 * zero by default.
-	 *
-	 * This value changes when {approve} or {transferFrom} are called.
-	 */
-	function allowance(address owner, address spender) external view returns(uint256);
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through {transferFrom}. This is
+     * zero by default.
+     *
+     * This value changes when {approve} or {transferFrom} are called.
+     */
+    function allowance(address owner, address spender) external view returns (uint256);
 
-	/**
-	 * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.
-	 *
-	 * Returns a boolean value indicating whether the operation succeeded.
-	 *
-	 * IMPORTANT: Beware that changing an allowance with this method brings the risk
-	 * that someone may use both the old and the new allowance by unfortunate
-	 * transaction ordering. One possible solution to mitigate this race
-	 * condition is to first reduce the spender's allowance to 0 and set the
-	 * desired value afterwards:
-	 * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
-	 *
-	 * Emits an {Approval} event.
-	 */
-	function approve(address spender, uint256 amount) external returns(bool);
+    /**
+     * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * IMPORTANT: Beware that changing an allowance with this method brings the risk
+     * that someone may use both the old and the new allowance by unfortunate
+     * transaction ordering. One possible solution to mitigate this race
+     * condition is to first reduce the spender's allowance to 0 and set the
+     * desired value afterwards:
+     * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
+     *
+     * Emits an {Approval} event.
+     */
+    function approve(address spender, uint256 amount) external returns (bool);
 
-	/**
-	 * @dev Moves `amount` tokens from `from` to `to` using the
-	 * allowance mechanism. `amount` is then deducted from the caller's
-	 * allowance.
-	 *
-	 * Returns a boolean value indicating whether the operation succeeded.
-	 *
-	 * Emits a {Transfer} event.
-	 */
-	function transferFrom(
-		address from,
-		address to,
-		uint256 amount
-	) external returns(bool);
+    /**
+     * @dev Moves `amount` tokens from `from` to `to` using the
+     * allowance mechanism. `amount` is then deducted from the caller's
+     * allowance.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a {Transfer} event.
+     */
+    function transferFrom(
+        address from,
+        address to,
+        uint256 amount
+    ) external returns (bool);
 }
 
 interface Referal {
@@ -740,91 +736,26 @@ interface IUniswapV2Router02 is IUniswapV2Router01 {
 	) external;
 }
 
-abstract contract ReentrancyGuard {
-	// Booleans are more expensive than uint256 or any type that takes up a full
-	// word because each write operation emits an extra SLOAD to first read the
-	// slot's contents, replace the bits taken up by the boolean, and then write
-	// back. This is the compiler's defense against contract upgrades and
-	// pointer aliasing, and it cannot be disabled.
+contract BanqiroTokenICO is Ownable {
+	using SafeMath for uint256;
 
-	// The values being non-zero value makes deployment a bit more expensive,
-	// but in exchange the refund on every call to nonReentrant will be lower in
-	// amount. Since refunds are capped to a percentage of the total
-	// transaction's gas, it is best to keep them low in cases like this one, to
-	// increase the likelihood of the full refund coming into effect.
-	uint256 private constant _NOT_ENTERED = 1;
-	uint256 private constant _ENTERED = 2;
-
-	uint256 private _status;
-
-	/**
-	 * @dev Unauthorized reentrant call.
-	 */
-	error ReentrancyGuardReentrantCall();
-
-	constructor() {
-		_status = _NOT_ENTERED;
-	}
-
-	/**
-	 * @dev Prevents a contract from calling itself, directly or indirectly.
-	 * Calling a `nonReentrant` function from another `nonReentrant`
-	 * function is not supported. It is possible to prevent this from happening
-	 * by making the `nonReentrant` function external, and making it call a
-	 * `private` function that does the actual work.
-	 */
-	modifier nonReentrant() {
-		_nonReentrantBefore();
-		_;
-		_nonReentrantAfter();
-	}
-
-	function _nonReentrantBefore() private {
-		// On the first call to nonReentrant, _status will be _NOT_ENTERED
-		if (_status == _ENTERED) {
-			revert ReentrancyGuardReentrantCall();
-		}
-
-		// Any calls to nonReentrant after this point will fail
-		_status = _ENTERED;
-	}
-
-	function _nonReentrantAfter() private {
-		// By storing the original value once again, a refund is triggered (see
-		// https://eips.ethereum.org/EIPS/eip-2200)
-		_status = _NOT_ENTERED;
-	}
-
-	/**
-	 * @dev Returns true if the reentrancy guard is currently set to "entered", which indicates there is a
-	 * `nonReentrant` function in the call stack.
-	 */
-	function _reentrancyGuardEntered() internal view returns(bool) {
-		return _status == _ENTERED;
-	}
-}
-
-contract BanqiroTokenICO is Ownable, ReentrancyGuard {
-	using SafeMath
-	for uint256;
-
-	address public banqiro = 0x5C85F56e8D5Fde19C94cc32CC7a8135a63F864a0;
-	uint256 public seedSaleStartime;
-	uint256 public preRegisterationStartTime;
-	uint256 public phase1StartTime;
-	uint256 public endTime;
-	uint256 public seedSaleAmountRaised;
+	address public banqiro = 0x12d7986d10a94224b4c2390E69Ae20ad7D0C4D45;
+	uint256 public seedSaleStartime = 0;
+    uint256 public preRegisterationStartTime;
+    uint256 public phase1StartTime = 1694009118;
+    uint256 public endTime = 1694181904;
+    uint256 public seedSaleAmountRaised;
 	uint256 public amountRaised;
-	address public referalContract = 0x39bB667955D2DbA945dA814f47685Ab644Af35dd;
-	address public vestingContract = 0x3A987437b545A240079CAa091722239691A0A66D;
-	uint256 public tokenSoldSeedSale;
+	address public referalContract = 0x64cC5e198d9C623c5cDb2065E6fd7A71f0c3ED41;
+	address public vestingContract = 0xe2473f38f7a6E5280b64679743dFa68d8d17B75A;
+    uint256 public tokenSoldSeedSale;
 	uint256 public tokensSold;
-	address public busd = 0xf8B8dEF2Eb952156F8f97E91d6A183953622E6D1;
-	address public usdt = 0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c;
+	address public usdc = 0x5d7d42d0eDA8A1AEfF73AB1Dc26853A6c9b9279e;
+	address public usdt = 0x52482c2de7cf1a88651C75Ee1d0208118d0B82C6;
 	address[] public investors;
-	IUniswapV2Router02 public immutable uniswapV2Router; // uniswap dex router
+	IUniswapV2Router02 public uniswapV2Router; // uniswap dex router
 
-	uint256 public phase0Supply = 3846154000000000000000000;
+    uint256 public phase0Supply = 3846154000000000000000000;
 	uint256 public phase1Supply = 4500000000000000000000000;
 	uint256 public phase2Supply = 9000000000000000000000000;
 	uint256 public phase3Supply = 13750000000000000000000000;
@@ -832,7 +763,7 @@ contract BanqiroTokenICO is Ownable, ReentrancyGuard {
 	uint256 public phase5Supply = 9803922000000000000000000;
 	uint256 public phase6Supply = 9433962000000000000000000;
 
-	mapping(address => uint256) public seedSaleTokenBoughtUser;
+    mapping(address => uint256) public seedSaleTokenBoughtUser;
 	mapping(address => uint256) public totalTokenBoughtUser;
 	mapping(address => uint256) public saleTokenBoughtUser;
 	mapping(address => uint256) public seedSaleUsdInvestedByUser;
@@ -844,11 +775,9 @@ contract BanqiroTokenICO is Ownable, ReentrancyGuard {
 	mapping(address => mapping(address => uint256)) public rewardFromUser;
 
 
-	uint256 public minBuyAmount = 50000000000000000000;
-	uint256 public maxBuyAmount = 50000000000000000000000;
 	uint256 public seedSaleBuy = 50000000000000000000000;
-	uint256 public preRegisterationBuyAmount = 50000000000000000000; //###
-	uint256 public maxPurchaseByUser = 50000000000000000000000;
+	uint256 public firstBuyAmount = 50000000000000000000; //###
+	uint256 public maxPurchase = 50000000000000000000000;
 	uint256 public phase0Price = 130000000000000000;
 	uint256 public phase1Price = 150000000000000000; //0.01
 	uint256 public phase2Price = 180000000000000000;
@@ -859,8 +788,6 @@ contract BanqiroTokenICO is Ownable, ReentrancyGuard {
 	uint256 public poolAmount;
 	uint256 public poolAmountDistributed; //###
 	uint256 public unlockPrice = 50000000000000000000;
-	uint256 public sepaCommision = 77000000000000000;
-	address public sepaWallet;
 
 	mapping(uint256 => uint256) public levelToCommision;
 	mapping(uint256 => uint256) public poolToSale;
@@ -868,12 +795,12 @@ contract BanqiroTokenICO is Ownable, ReentrancyGuard {
 	mapping(address => uint256) public poolReward;
 	mapping(address => uint256) public referalIncome;
 
-	address public bnqEOOD;
-	address public bnqTechJSC;
-	address public salesWallet;
-	address public bnqMarketingJSC;
-	address public boardWallet;
-	address public topAccount;
+	address public bnqEOOD = 0x0f5fA99Dc30A3580eff1E26Dcb5b538b2E1861Ab;
+	address public bnqTechJSC = 0xE8ec850bAcb4c752F8858806C7d7264e2FC99120;
+	address public salesWallet = 0x07A8Ea783A3a02cd65B5DCf0F6b7E96fA0eb3AB8;
+	address public bnqMarketingJSC = 0x0B6E2CCb323029982172E81725E227E92764Ac55;
+	address public boardWallet = 0x0C28981e15Bc9BEf7603c2b1DDB21C5c8784f632;
+	address public topAccount = 0xFCAd0B19bB29D4674531d6f115237E16AfCE377c;
 
 	uint256 public seedEOODPercentage = 3000;
 	uint256 public seedTechJSCPercentage = 5000;
@@ -895,7 +822,7 @@ contract BanqiroTokenICO is Ownable, ReentrancyGuard {
 	uint256 public bonusBoardPercentage = 350;
 	uint256 public bonusMarketingJSCPercentage = 250;
 
-
+    
 
 	struct Refer {
 		address user;
@@ -904,7 +831,7 @@ contract BanqiroTokenICO is Ownable, ReentrancyGuard {
 	}
 
 	event TokensBought(address indexed investor, uint256 indexed usdAmount,
-		uint256 indexed tokenAmount);
+		uint256 indexed tokenAmount, uint256 phase);
 
 	event SupplyEdited(uint256 phase0Supply, uint256 phase1Supply, uint256 phase2Supply,
 		uint256 phase3Supply, uint256 phase4Supply, uint256 phase5Supply, uint256 phase6Supply);
@@ -918,11 +845,9 @@ contract BanqiroTokenICO is Ownable, ReentrancyGuard {
 	event ContractsUpdated(address referalContract, address vestingContract);
 
 	event ReferalIncomeDistributed(address user, address referrer, uint256 amountPurchased,
-		uint256 referalAmount, uint256 level);
+		uint256 referalAmount, uint256 level, uint256 phase);
 
 	event WhitelistUpdated(address user, bool isWhitelisted);
-
-	event BuyAmountUpdated(uint256 min, uint256 max);
 
 
 	constructor(
@@ -956,92 +881,90 @@ contract BanqiroTokenICO is Ownable, ReentrancyGuard {
 
 	}
 
-	function updateTime(uint256 _seedSaleStartime, uint256 _preRegisterationStartTime, uint256 _phase1StartTime, uint256 _endTime)
-	external onlyOwner {
-		seedSaleStartime = _seedSaleStartime;
-		preRegisterationStartTime = _preRegisterationStartTime;
-		phase1StartTime = _phase1StartTime;
-		endTime = _endTime;
+	function updateTime(uint256 _seedSaleStartime, uint256 _preRegisterationStartTime, uint256 _phase1StartTime, uint256 _endTime )
+	 external onlyOwner{
+		 seedSaleStartime = _seedSaleStartime;
+		 preRegisterationStartTime = _preRegisterationStartTime;
+		 phase1StartTime = _phase1StartTime;
+		 endTime = _endTime;
 
 	}
 
-	function updatebanqiroTokenAddress(address token) external onlyOwner {
+	function updatebanqiroTokenAddress(address token) external onlyOwner{
 		banqiro = token;
 	}
 
 	function updateWallet(address _bnqEOOD,
-		address _bnqTechJSC,
-		address _salesWallet,
-		address _bnqMarketingJSC,
-		address _boardWallet,
-		address _topAccount, address _sepaWallet) external onlyOwner {
-		bnqEOOD = _bnqEOOD;
-		bnqTechJSC = _bnqTechJSC;
-		salesWallet = _salesWallet;
-		bnqMarketingJSC = _bnqMarketingJSC;
-		boardWallet = _boardWallet;
-		topAccount = _topAccount;
-		sepaWallet = _sepaWallet;
+	address _bnqTechJSC,
+	address _salesWallet,
+	address _bnqMarketingJSC,
+	address _boardWallet,
+	address _topAccount) external onlyOwner{
+	bnqEOOD = _bnqEOOD;
+	bnqTechJSC = _bnqTechJSC;
+	salesWallet = _salesWallet;
+	bnqMarketingJSC = _bnqMarketingJSC;
+	boardWallet = _boardWallet;
+	topAccount = _topAccount;
 	}
 
 	function updateSeedPercentage(uint256 _seedEOODPercentage, uint256 _seedMarketingJSCPercentage,
-		uint256 _seedTechJSCPercentage, uint256 _seedAffiliatePercentage) external onlyOwner {
-		require(_seedEOODPercentage + _seedMarketingJSCPercentage +
-			_seedTechJSCPercentage + _seedAffiliatePercentage == 10000, "Enter correct values");
+	uint256 _seedTechJSCPercentage, uint256 _seedAffiliatePercentage) external onlyOwner{
+		require( _seedEOODPercentage+  _seedMarketingJSCPercentage+ 	
+		 _seedTechJSCPercentage+  _seedAffiliatePercentage == 10000, "Enter correct values");
 		seedEOODPercentage = _seedEOODPercentage;
 		seedMarketingJSCPercentage = _seedMarketingJSCPercentage;
 		seedTechJSCPercentage = _seedTechJSCPercentage;
 		seedAffiliatePercentage = _seedAffiliatePercentage;
-		
 
 	}
 
 	function updateSalePercentage(uint256 _EOODPercentage,
-		uint256 _techJSCPercentage,
-		uint256 _salesPercentage,
-		uint256 _boardPercentage,
-		uint256 _marketingJSCPercentage,
-		uint256 _affiliatePercentage,
-		uint256 _poolPercentage) external onlyOwner {
-		require(_EOODPercentage +
-			_techJSCPercentage +
-			_salesPercentage +
-			_boardPercentage +
-			_marketingJSCPercentage +
-			_affiliatePercentage +
-			_poolPercentage == 10000, "Enter correct values");
-		EOODPercentage = _EOODPercentage;
-		techJSCPercentage = _techJSCPercentage;
-		salesPercentage = _salesPercentage;
-		boardPercentage = _boardPercentage;
-		marketingJSCPercentage = _marketingJSCPercentage;
-		affiliatePercentage = _affiliatePercentage;
-		poolPercentage = _poolPercentage;
-		
+	uint256 _techJSCPercentage,
+	uint256 _salesPercentage,
+	uint256 _boardPercentage,
+	uint256 _marketingJSCPercentage,
+	uint256 _affiliatePercentage0,
+	uint256 _poolPercentage) external onlyOwner{
+	require(_EOODPercentage+
+	_techJSCPercentage+
+	_salesPercentage+
+	_boardPercentage+
+	_marketingJSCPercentage+
+	_affiliatePercentage0+
+	_poolPercentage == 10000, "Enter correct values");
+    EOODPercentage = _EOODPercentage;
+	techJSCPercentage = _techJSCPercentage;
+	salesPercentage = _salesPercentage;
+	boardPercentage = _boardPercentage;
+	marketingJSCPercentage = _marketingJSCPercentage;
+	affiliatePercentage = _affiliatePercentage0;
+	poolPercentage = _poolPercentage;
 
 	}
 
 	function updateBonusPercentage(uint256 _EOODPercentage,
-		uint256 _techJSCPercentage,
-		uint256 _salesPercentage,
-		uint256 _boardPercentage,
-		uint256 _marketingJSCPercentage,
-		uint256 _affiliatePercentage,
-		uint256 _poolPercentage) external onlyOwner {
-		require(_EOODPercentage +
-			_techJSCPercentage +
-			_salesPercentage +
-			_boardPercentage +
-			_marketingJSCPercentage +
-			_affiliatePercentage +
-			_poolPercentage == 10000, "Enter correct values");
-		bonusEOODPercentage = _EOODPercentage;
-		bonusTechJSCPercentage = _techJSCPercentage;
-		bonusSalesPercentage = _salesPercentage;
-		bonusBoardPercentage = _boardPercentage;
-		bonusMarketingJSCPercentage = _marketingJSCPercentage;
-		affiliatePercentage = _affiliatePercentage;
-		poolPercentage = _poolPercentage;
+	uint256 _techJSCPercentage,
+	uint256 _salesPercentage,
+	uint256 _boardPercentage,
+	uint256 _marketingJSCPercentage,
+	uint256 _affiliatePercentage0,
+	uint256 _poolPercentage) external onlyOwner{
+	require(_EOODPercentage+
+	_techJSCPercentage+
+	_salesPercentage+
+	_boardPercentage+
+	_marketingJSCPercentage+
+	_affiliatePercentage0+
+	_poolPercentage == 10000, "Enter correct values");
+    bonusEOODPercentage = _EOODPercentage;
+	bonusTechJSCPercentage = _techJSCPercentage;
+	bonusSalesPercentage = _salesPercentage;
+	bonusBoardPercentage = _boardPercentage;
+	bonusMarketingJSCPercentage = _marketingJSCPercentage;
+	affiliatePercentage = _affiliatePercentage0;
+	poolPercentage = _poolPercentage;
+
 	}
 
 	function updateSupply(uint256 _phase0Supply, uint256 _phase1Supply, uint256 _phase2Supply,
@@ -1074,26 +997,17 @@ contract BanqiroTokenICO is Ownable, ReentrancyGuard {
 	}
 
 	function updatePurchaseValue(uint256 minAmount, uint256 maxAmount) external onlyOwner {
-		preRegisterationBuyAmount = minAmount;
-		maxPurchaseByUser = maxAmount;
+		firstBuyAmount = minAmount;
+		maxPurchase = maxAmount;
 
 	}
 
 
-	function updateMinMaxBuy(uint256 min, uint256 max) external onlyOwner {
-		minBuyAmount = min;
-		maxBuyAmount = max;
-
-		emit BuyAmountUpdated(min, max);
-	}
-
-
-	function updateLevelToCommision(uint256 level, uint256 commision) external onlyOwner {
-		require(level >= 1 && level <= 10, "Only 10 levels allowed");
+	function updateLevelToCommision(uint256 level, uint256 commision) external onlyOwner{
 		levelToCommision[level] = commision;
 	}
 
-
+ 
 
 	function updateContracts(address _referalContract, address _vestingContract) external onlyOwner {
 		referalContract = _referalContract;
@@ -1104,12 +1018,13 @@ contract BanqiroTokenICO is Ownable, ReentrancyGuard {
 	}
 
 	function getStage() public view returns(uint256 stage) {
-		require(block.timestamp > seedSaleStartime, "Sale not started");
+		require(block.timestamp > seedSaleStartime,"Sale not started");
 		require(block.timestamp < endTime, "Sale Ended");
 
-		if (block.timestamp > seedSaleStartime && block.timestamp < phase1StartTime) {
-			return (0);
-		} else if (tokensSold >= 0 && tokensSold < phase1Supply) {
+		if(block.timestamp > seedSaleStartime && block.timestamp < phase1StartTime ){
+            return(0);
+		}
+		else if (tokensSold >= 0 && tokensSold < phase1Supply) {
 			return (1);
 		} else if (tokensSold >= phase1Supply && tokensSold < phase2Supply) {
 			return (2);
@@ -1124,31 +1039,35 @@ contract BanqiroTokenICO is Ownable, ReentrancyGuard {
 		}
 	}
 
-	function buyToken(address token, uint256 amount) external nonReentrant {
+	function buyToken(address token, uint256 amount) external {
 		if (!added[msg.sender]) {
 			investors.push(msg.sender);
 		}
-		require(token == usdt || token == busd, "Invalid currency");
-		require(block.timestamp > seedSaleStartime, "Sale not started");
+		require(token == usdt || token == usdc, "Invalid currency");
+		require(amount >= firstBuyAmount, "User should invest atleast 50$");
+		require(block.timestamp > seedSaleStartime,"Sale not started");
 		require(block.timestamp < endTime, "Sale Ended");
 		uint256 stage = getStage();
 		uint256 price;
 		if (stage == 0) {
 			price = phase0Price;
-			require(Referal(referalContract).isWhitelisted(msg.sender) ||
-				Referal(referalContract).getReferrer(msg.sender) != address(0), "Not Eligible, try later"); //###
+			require(Referal(referalContract).isWhitelisted(msg.sender ) ||
+			Referal(referalContract).getReferrer(msg.sender ) != address(0), "Not Eligible, try later"); //###
 
 			if (preRegisterationStartTime > block.timestamp) {
 				require(seedSaleUsdInvestedByUser[msg.sender] + amount <= seedSaleBuy, "50.000 worth of tokens bought");
 				seedSaleUsdInvestedByUser[msg.sender] += amount;
 
-			} else {
-				require(preRegisterationUsdInvestedByUser[msg.sender] + amount <= preRegisterationBuyAmount, "50 worth of tokens bought");
-				preRegisterationUsdInvestedByUser[msg.sender] += amount;
 			}
-		} else if (stage == 1) {
+			else{
+				require(preRegisterationUsdInvestedByUser[msg.sender] + amount <= firstBuyAmount, "50 worth of tokens bought");
+                preRegisterationUsdInvestedByUser[msg.sender] += amount;      
+			}
+		}
+		else if (stage == 1){
 			price = phase1Price;
-		} else if (stage == 2) {
+		} 
+		else if (stage == 2) {
 			price = phase2Price;
 		} else if (stage == 3) {
 			price = phase3Price;
@@ -1156,74 +1075,78 @@ contract BanqiroTokenICO is Ownable, ReentrancyGuard {
 			price = phase4Price;
 		} else if (stage == 5) {
 			price = phase5Price;
-		} else if (stage == 6) {
+		}
+		else if (stage == 6) {
 			price = phase6Price;
 		}
 		// uint256 tokenAmount = getTokensForPrice(amount, price);
-		uint256 tokenAmount = amount / price;
-		require(amount >= minBuyAmount, "Cannot buy less than minimum Buy Amount"); //###
-		require(amount <= maxBuyAmount, "Cannot buy more than Max Buy Amount");
-		if (stage == 0) {
-			tokenSoldSeedSale += tokenAmount;
-			require(tokenSoldSeedSale <= phase0Supply, "Seed Phase sold out");
-			seedSaleAmountRaised += amount;
-			seedSaleUsdInvestedByUser[msg.sender] += amount;
-			seedSaleTokenBoughtUser[msg.sender] += tokenAmount;
-			if (token == busd) {
-				distributeSeedSaleRevenue(amount, msg.sender, busd);
-			} else if (token == usdt) {
-				distributeSeedSaleRevenue(amount, msg.sender, usdt);
-			}
-		} else if (stage >= 1 && stage <= 4) {
-			tokensSold += tokenAmount;
-			amountRaised += amount;
-			saleUsdInvestedByUser[msg.sender] += amount;
-			saleTokenBoughtUser[msg.sender] += tokenAmount;
-			require(saleUsdInvestedByUser[msg.sender] <= maxPurchaseByUser, "Cannot Purchase more than $50.000 worth of token");
-			if (token == busd) {
-				distributeRevenue(amount, msg.sender, busd);
-			} else if (token == usdt) {
-				distributeRevenue(amount, msg.sender, usdt);
-			}
-		} else {
-			tokensSold += tokenAmount;
-			require(tokensSold <= phase6Supply, "SOLD OUT!!"); //###
-			amountRaised += amount;
-			bonusSaleUsdInvestedByUser[msg.sender] += amount;
-			bonusTokenBoughtUser[msg.sender] += tokenAmount;
-			require(bonusSaleUsdInvestedByUser[msg.sender] <= maxPurchaseByUser,
-				"Cannot Purchase more than $50.000 worth of token in bonus Sale");
-			if (token == busd) {
-				distributeBonusRevenue(amount, msg.sender, busd);
-			} else if (token == usdt) {
-				distributeBonusRevenue(amount, msg.sender, usdt);
-			}
+		uint256 tokenAmount = (amount*(10**18)) / price ;
+		uint256 usdAmount = amount;
+		require(usdAmount >= firstBuyAmount, "Cannot buy below $50"); //###
+		if(stage == 0){
+           tokenSoldSeedSale += tokenAmount;
+		   require(tokenSoldSeedSale <= phase0Supply, "Seed Phase sold out"); 
+		   seedSaleAmountRaised += usdAmount;
+		   seedSaleUsdInvestedByUser[msg.sender] += usdAmount;
+           seedSaleTokenBoughtUser[msg.sender] += tokenAmount;
+		   if (token == usdc) {
+			distributeSeedSaleRevenue(amount, msg.sender ,usdc);
+		   } else if (token == usdt) {
+			distributeSeedSaleRevenue(amount, msg.sender ,usdt);
+		   }
+		}
+		else if(stage >= 1 && stage <= 4){
+           tokensSold += tokenAmount;
+	       amountRaised += usdAmount;
+		   saleUsdInvestedByUser[msg.sender] += usdAmount;
+           saleTokenBoughtUser[msg.sender] += tokenAmount;
+		   require(saleUsdInvestedByUser[msg.sender] <= maxPurchase, "Cannot Purchase more than $50.000 worth of token");
+		   if (token == usdc) {
+			distributeRevenue(amount, msg.sender ,usdc);
+	    	} else if (token == usdt) {
+			distributeRevenue(amount, msg.sender ,usdt);
+	    	}
+		}
+		else{
+		   tokensSold += tokenAmount;
+		   require(tokensSold <= phase6Supply, "SOLD OUT!!"); //###
+	       amountRaised += usdAmount;
+		   bonusSaleUsdInvestedByUser[msg.sender] += usdAmount;
+           bonusTokenBoughtUser[msg.sender] += tokenAmount;
+           require(bonusSaleUsdInvestedByUser[msg.sender] <= maxPurchase, 
+		   "Cannot Purchase more than $50.000 worth of token in bonus Sale");
+		   if (token == usdc) {
+			distributeBonusRevenue(amount, msg.sender ,usdc);
+	    	} else if (token == usdt) {
+			distributeBonusRevenue(amount, msg.sender ,usdt);
+		    }
 		}
 
-		totalUsdInvestedByUser[msg.sender] += amount;
-		totalTokenBoughtUser[msg.sender] += tokenAmount;
-
+		totalUsdInvestedByUser[msg.sender] += usdAmount;
+	    totalTokenBoughtUser[msg.sender] += tokenAmount;
+		
 		IERC20(banqiro).transfer(vestingContract, tokenAmount);
 		Vesting(vestingContract).vestTokens(msg.sender, tokenAmount);
-		emit TokensBought(msg.sender, amount, tokenAmount);
+		emit TokensBought(msg.sender, usdAmount, tokenAmount, getStage());
 
 	}
 
 	function distributeRevenue(uint256 amount, address user, address token) private {
 		uint256 pool = (amount * poolPercentage) / 10000;
-		if (token == usdt) {
-			IERC20(token).transferFrom(user, address(this), pool);
-			uint256 poolBusd = swapUsdtForBusd(pool);
-			poolAmount += poolBusd;
-		} else {
-			poolAmount += pool;
-			IERC20(token).transferFrom(user, address(this), pool);
+		if(token == usdt){
+		  IERC20(token).transferFrom(user, address(this), pool);
+		  IERC20(token).approve(0xD99D1c33F9fC3444f8101754aBC46c52416550D1,pool);
+		  uint256 poolUsdc = swapUsdtForUsdc(pool);
+		  poolAmount += poolUsdc;	
+		}
+		else{
+          poolAmount += pool;
+		  IERC20(token).transferFrom(user, address(this), pool);
 		}
 		uint256 EOODAmount = (amount * EOODPercentage) / 10000;
 		IERC20(token).transferFrom(user, bnqEOOD, EOODAmount);
 		uint256 techAmount = (amount * techJSCPercentage) / 10000;
-		IERC20(token).transferFrom(user, sepaWallet, sepaCommision);
-		IERC20(token).transferFrom(user, bnqTechJSC, techAmount - sepaCommision);
+		IERC20(token).transferFrom(user, bnqTechJSC, techAmount);
 		uint256 salesAmount = (amount * salesPercentage) / 10000;
 		IERC20(token).transferFrom(user, salesWallet, salesAmount);
 		uint256 marketingAmount = (amount * marketingJSCPercentage) / 10000;
@@ -1238,46 +1161,46 @@ contract BanqiroTokenICO is Ownable, ReentrancyGuard {
 	}
 
 	function distributeSeedSaleRevenue(uint256 amount, address user, address token) private {
-
+		
 		uint256 EOODAmount = (amount * seedEOODPercentage) / 10000;
 		IERC20(token).transferFrom(user, bnqEOOD, EOODAmount);
 		uint256 techAmount = (amount * seedTechJSCPercentage) / 10000;
-		IERC20(token).transferFrom(user, sepaWallet, sepaCommision);
-		IERC20(token).transferFrom(user, bnqTechJSC, techAmount - sepaCommision);
+		IERC20(token).transferFrom(user, bnqTechJSC, techAmount);
 		uint256 marketingAmount = (amount * seedMarketingJSCPercentage) / 10000;
 		IERC20(token).transferFrom(user, bnqMarketingJSC, marketingAmount);
 		uint256 referalTotalAmount = (amount * seedAffiliatePercentage) / 10000;
 		uint256 referalAmount;
-		if (Referal(referalContract).getReferrer(user) != address(0)) {
-			if (getLevelsUnlocked(Referal(referalContract).getReferrer(user)) >= 1) {
-				IERC20(token).transferFrom(user, Referal(referalContract).getReferrer(user), amount * (levelToCommision[1]) / 10000);
-				referalIncome[Referal(referalContract).getReferrer(user)] += amount * (levelToCommision[1]) / 10000;
-				rewardFromUser[Referal(referalContract).getReferrer(user)][user] = amount * (levelToCommision[1]) / 10000;
-				emit ReferalIncomeDistributed(user, Referal(referalContract).getReferrer(user), amount,
-					amount * (levelToCommision[1]) / 10000, 1);
-				referalAmount = amount * (levelToCommision[1]) / 10000;
-			}
+		if (Referal(referalContract).getReferrer(user)!= address(0)) {
+			if((getLevelsUnlocked(Referal(referalContract).getReferrer(user)) >= 1) || amount >= unlockPrice){
+				IERC20(token).transferFrom(user, Referal(referalContract).getReferrer(user), amount*(levelToCommision[1])/10000);
+				referalIncome[Referal(referalContract).getReferrer(user)] += amount*(levelToCommision[1])/10000;
+				rewardFromUser[Referal(referalContract).getReferrer(user)][user] = amount*(levelToCommision[1])/10000;
+				emit ReferalIncomeDistributed(user,  Referal(referalContract).getReferrer(user),amount,
+				amount*(levelToCommision[1])/10000,1,getStage());
+				referalAmount = amount*(levelToCommision[1])/10000;
+			}	
 		}
 		if (referalTotalAmount > referalAmount) {
 			IERC20(token).transferFrom(user, topAccount, referalTotalAmount - referalAmount);
 		}
 	}
 
-	function distributeBonusRevenue(uint256 amount, address user, address token) private {
+		function distributeBonusRevenue(uint256 amount, address user, address token) private {
 		uint256 pool = (amount * poolPercentage) / 10000;
-		if (token == usdt) {
-			IERC20(token).transferFrom(user, address(this), pool);
-			uint256 poolBusd = swapUsdtForBusd(pool);
-			poolAmount += poolBusd;
-		} else {
-			poolAmount += pool;
-			IERC20(token).transferFrom(user, address(this), pool);
+		if(token == usdt){
+		  IERC20(token).transferFrom(user, address(this), pool);
+		  IERC20(token).approve(0xD99D1c33F9fC3444f8101754aBC46c52416550D1,pool);
+		  uint256 poolUsdc = swapUsdtForUsdc(pool);
+		  poolAmount += poolUsdc;	
+		}
+		else{
+          poolAmount += pool;
+		  IERC20(token).transferFrom(user, address(this), pool);
 		}
 		uint256 EOODAmount = (amount * bonusEOODPercentage) / 10000;
 		IERC20(token).transferFrom(user, bnqEOOD, EOODAmount);
 		uint256 techAmount = (amount * bonusTechJSCPercentage) / 10000;
-		IERC20(token).transferFrom(user, sepaWallet, sepaCommision);
-		IERC20(token).transferFrom(user, bnqTechJSC, techAmount - sepaCommision);
+		IERC20(token).transferFrom(user, bnqTechJSC, techAmount);
 		uint256 salesAmount = (amount * bonusSalesPercentage) / 10000;
 		IERC20(token).transferFrom(user, salesWallet, salesAmount);
 		uint256 marketingAmount = (amount * bonusMarketingJSCPercentage) / 10000;
@@ -1290,33 +1213,43 @@ contract BanqiroTokenICO is Ownable, ReentrancyGuard {
 			IERC20(token).transferFrom(user, topAccount, referalTotalAmount - referalAmount);
 		}
 	}
- 
 
-	function distributeToken(address user, uint256 amount, address token) private returns(uint256 total) {
-		uint totalItemCount = 10;
-		address _user = user;
-		for (uint i = 1; i <= totalItemCount; i++) {
-			if (Referal(referalContract).getReferrer(_user) != address(0)) {
-				if (getLevelsUnlocked(Referal(referalContract).getReferrer(_user)) >= i) {
-					IERC20(token).transferFrom(user, Referal(referalContract).getReferrer(_user), amount * (levelToCommision[i]) / 10000);
-					referalIncome[Referal(referalContract).getReferrer(_user)] += amount * (levelToCommision[i]) / 10000;
-					rewardFromUser[Referal(referalContract).getReferrer(_user)][_user] = amount * (levelToCommision[i]) / 10000;
-					emit ReferalIncomeDistributed(user, Referal(referalContract).getReferrer(_user), amount,
-						amount * (levelToCommision[i]) / 10000, i);
-					total += amount * (levelToCommision[i]) / 10000;
+
+    function distributeToken(address user, uint256 amount, address token) public returns(uint256 total){
+     uint totalItemCount = 10;
+     address _user = user;
+        for (uint i = 1; i <= totalItemCount; i++) {
+            if (Referal(referalContract).getReferrer(_user)!= address(0)) {
+				if((_user == user) && (amount >= unlockPrice)){
+					IERC20(token).transferFrom(user, Referal(referalContract).getReferrer(_user), amount*(levelToCommision[i])/10000);
+					referalIncome[Referal(referalContract).getReferrer(_user)] += amount*(levelToCommision[i])/10000;
+					rewardFromUser[Referal(referalContract).getReferrer(_user)][_user] = amount*(levelToCommision[i])/10000;
+					emit ReferalIncomeDistributed(user,  Referal(referalContract).getReferrer(_user),amount,
+					amount*(levelToCommision[i])/10000,i,getStage());
+					total += amount*(levelToCommision[i])/10000;
 				}
-				_user = Referal(referalContract).getReferrer(_user);
-			} else {
+				else if(getLevelsUnlocked(Referal(referalContract).getReferrer(_user)) >= i){
+					IERC20(token).transferFrom(user, Referal(referalContract).getReferrer(_user), amount*(levelToCommision[i])/10000);
+					referalIncome[Referal(referalContract).getReferrer(_user)] += amount*(levelToCommision[i])/10000;
+					rewardFromUser[Referal(referalContract).getReferrer(_user)][_user] = amount*(levelToCommision[i])/10000;
+					emit ReferalIncomeDistributed(user,  Referal(referalContract).getReferrer(_user),amount,
+					amount*(levelToCommision[i])/10000,i,getStage());
+					total += amount*(levelToCommision[i])/10000;
+				}	
+                _user = Referal(referalContract).getReferrer(_user);
+            }
+			else{
 				return total;
 			}
-		}
-	}
+        }
+    }
 
 
 	function getStagePrice(uint256 stage) public view returns(uint256 price) {
 		if (stage == 0) {
 			price = phase0Price;
-		} else if (stage == 1) {
+		}
+		else if (stage == 1) {
 			price = phase1Price;
 		} else if (stage == 2) {
 			price = phase2Price;
@@ -1326,7 +1259,8 @@ contract BanqiroTokenICO is Ownable, ReentrancyGuard {
 			price = phase4Price;
 		} else if (stage == 5) {
 			price = phase5Price;
-		} else if (stage == 6) {
+		}
+		else if (stage == 6) {
 			price = phase6Price;
 		}
 	}
@@ -1338,8 +1272,8 @@ contract BanqiroTokenICO is Ownable, ReentrancyGuard {
 		address _user = user;
 
 		for (uint i = 1; i <= totalItemCount; i++) {
-			if (Referal(referalContract).getReferrer(_user) != address(0) &&
-				getLevelsUnlocked(Referal(referalContract).getReferrer(_user)) >= i) {
+			if (Referal(referalContract).getReferrer(_user) != address(0) && 
+			getLevelsUnlocked(Referal(referalContract).getReferrer(_user)) >= i) {
 				_user = Referal(referalContract).getReferrer(_user);
 				itemCount = itemCount + (1);
 			}
@@ -1347,8 +1281,8 @@ contract BanqiroTokenICO is Ownable, ReentrancyGuard {
 		_user = user;
 		Refer[] memory items = new Refer[](itemCount);
 		for (uint i = 1; i <= totalItemCount; i++) {
-			if (Referal(referalContract).getReferrer(_user) != address(0) &&
-				getLevelsUnlocked(Referal(referalContract).getReferrer(_user)) >= i) {
+			if (Referal(referalContract).getReferrer(_user) != address(0) && 
+			getLevelsUnlocked(Referal(referalContract).getReferrer(_user)) >= i) {
 				Refer memory currentItem = Refer({
 					user: _user,
 					amount: (amount * (levelToCommision[i])) / 10000
@@ -1361,11 +1295,11 @@ contract BanqiroTokenICO is Ownable, ReentrancyGuard {
 		return items;
 	}
 
-	function getLevelsUnlocked(address user) public view returns(uint256 levels) {
+	function getLevelsUnlocked(address user) public view returns(uint256 levels){
 		uint256 totalActivePartners = Referal(referalContract).getAllRefrees(user).length;
-		for (uint256 i = 0; i < totalActivePartners; i++) {
-			if (totalUsdInvestedByUser[Referal(referalContract).getAllRefrees(user)[i]] >= unlockPrice) {
-				levels++;
+		for(uint256 i=0; i< totalActivePartners; i++){
+			if(totalUsdInvestedByUser[Referal(referalContract).getAllRefrees(user)[i]] >= unlockPrice ){
+                levels++;
 			}
 		}
 	}
@@ -1449,7 +1383,7 @@ contract BanqiroTokenICO is Ownable, ReentrancyGuard {
 			pool = 5;
 			amountRemaining = poolToSale[5] - amount;
 		}
-		if (amount > poolToSale[5]) {
+		if(amount > poolToSale[5]){
 			pool = 5;
 			amountRemaining = 0;
 
@@ -1465,7 +1399,7 @@ contract BanqiroTokenICO is Ownable, ReentrancyGuard {
 				(uint256 amount, , , ) = getEligibleAmount(investors[j]);
 				if (amount >= poolToSale[i]) {
 					uint256 userAmount = ((totalUsdInvestedByUser[investors[j]]) * poolShare) / amountRaised;
-					IERC20(busd).transfer(investors[j], userAmount);
+					IERC20(usdc).transfer(investors[j], userAmount);
 					poolAmountDistributed += userAmount;
 					poolReward[investors[j]] += userAmount;
 				}
@@ -1474,11 +1408,11 @@ contract BanqiroTokenICO is Ownable, ReentrancyGuard {
 		}
 	}
 
-	function swapUsdtForBusd(uint256 usdtAmount) private returns(uint256 busdAmount) {
+	function swapUsdtForUsdc(uint256 usdtAmount) public payable returns(uint256 UsdcAmount) {
 
 		address[] memory path = new address[](2);
 		path[0] = usdt;
-		path[1] = busd;
+		path[1] = usdc;
 		uint[] memory amounts = new uint[](2);
 		amounts = uniswapV2Router.swapExactTokensForTokens(
 			usdtAmount,
